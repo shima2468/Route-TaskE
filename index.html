@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Transactions</title>
+    <!-- Bootstrap Style Sheet -->
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <!-- Chart.js Library -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- Main Style Sheet -->
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <div class="container my-5">
+        <!-- Heading Section Start -->
+        <h1 class="mb-4 text-center">Customer Transactions</h1>
+        <div class="filter-section row mb-4">
+            <div class="col-md-4">
+                <label for="customerFilter" class="form-label">Filter by Customer:</label>
+                <input type="text" id="customerFilter" class="form-control" placeholder="Customer Name">
+            </div>
+            <div class="col-md-4">
+                <label for="amountFilter" class="form-label">Filter by Transaction Amount:</label>
+                <input type="number" id="amountFilter" class="form-control" placeholder="Transaction Amount">
+            </div>
+            <div class="col-md-4 d-flex align-items-end">
+                <button class="btn btn-primary w-100" onclick="filterData()">Filter</button>
+            </div>
+        </div>
+        <!-- Heading Section End -->
+
+        <!-- Table Section Start -->
+        <table class="table table-striped table-bordered" id="customerTable">
+            <thead class="table-dark">
+                <tr>
+                    <th>Customer</th>
+                    <th>Transaction Date</th>
+                    <th>Transaction Amount</th>
+                </tr>
+            </thead>
+            <tbody id="customerTableBody">
+                <!-- Data will be populated here -->
+            </tbody>
+        </table>
+        <!-- Table Section End -->
+
+        <!-- Chart Section Start -->
+        <h2 class="mt-4 text-center">Transaction Amount per Day</h2>
+        <canvas id="transactionChart"></canvas>
+        <!-- Chart Section End -->
+    </div>
+
+    <script src="./js/script.js"></script>
+</body>
+</html>
